@@ -1,0 +1,507 @@
+:root {
+  --gold-100: #fef3c7;
+  --gold-500: #f59e0b;
+  --gold-700: #b45309;
+  --wine-100: #fce7f3;
+  --wine-600: #be185d;
+  --wine-700: #9d174d;
+  --green-100: #dcfce7;
+  --green-600: #16a34a;
+  --slate-900: #0f172a;
+  --gray-900: #111827;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
+}
+
+.pageShell {
+  min-height: 100vh;
+  padding: 40px 24px 80px;
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.2), transparent 28%),
+    radial-gradient(circle at top left, rgba(190, 24, 93, 0.16), transparent 24%),
+    linear-gradient(180deg, #fffdf8 0%, #fffaf5 48%, #f8fafc 100%);
+  color: var(--gray-900);
+}
+
+.heroSection,
+.sectionBlock {
+  width: min(1200px, 100%);
+  margin: 0 auto 32px;
+}
+
+.heroSection {
+  display: grid;
+  gap: 24px;
+}
+
+.heroCopy h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.eyebrow,
+.sectionLabel {
+  margin: 0;
+  color: var(--wine-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroDescription,
+.menuSupportingText,
+.cardSubtleText,
+.emptyState p {
+  color: rgba(17, 24, 39, 0.74);
+  line-height: 1.6;
+}
+
+.statsGrid,
+.restaurantGrid,
+.menuGrid,
+.preferenceGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.statsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.statCard,
+.diningCard,
+.foodCard,
+.summaryCard,
+.reservationPanel,
+.modalCard,
+.emptyState {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.statIconWrap {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(190, 24, 93, 0.16));
+  color: var(--wine-700);
+}
+
+.statValue {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.statLabel {
+  margin: 4px 0 0;
+  color: rgba(17, 24, 39, 0.68);
+}
+
+.sectionHeading,
+.menuHeader,
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.sectionHeading h2,
+.menuHeader h2,
+.reservationPanel h2,
+.modalHeader h3,
+.summaryCard h3,
+.emptyState h3 {
+  margin: 8px 0 0;
+  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+}
+
+.sectionMeta,
+.inlineMeta,
+.quickHighlights,
+.summaryMeta,
+.foodCardFooter,
+.summaryMini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sectionMeta span,
+.inlineMeta span,
+.quickHighlights span,
+.summaryMeta span,
+.foodCardFooter span,
+.summaryMini span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(17, 24, 39, 0.7);
+}
+
+.restaurantGrid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.diningCard {
+  overflow: hidden;
+  border-radius: 28px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.diningCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.15);
+}
+
+.diningCardSelected {
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.diningCardVisual,
+.foodCardVisual {
+  position: relative;
+  min-height: 180px;
+  padding: 18px;
+}
+
+.diningCardOverlay {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  color: var(--white);
+}
+
+.diningCardOverlay p,
+.diningCardOverlay h3 {
+  margin: 0;
+}
+
+.diningCardBody,
+.foodCardBody,
+.summaryCard,
+.reservationPanel,
+.modalCard,
+.emptyState {
+  padding: 22px;
+}
+
+.cardSubtleText,
+.ingredientsText {
+  font-size: 0.95rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.textButton,
+.menuTab,
+.preferenceChip {
+  border: 0;
+  cursor: pointer;
+  transition: transform 160ms ease, opacity 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--gold-500), var(--wine-600));
+  color: var(--white);
+}
+
+.secondaryButton {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--gray-900);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.menuTab:hover,
+.preferenceChip:hover {
+  transform: translateY(-1px);
+}
+
+.signatureStrip,
+.statusBadge,
+.badgeWarm,
+.badgeGold,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.signatureStrip,
+.tag {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--gold-700);
+}
+
+.statusBadge,
+.badgeWarm,
+.badgeGold {
+  padding: 7px 12px;
+}
+
+.statusAvailable {
+  background: rgba(22, 163, 74, 0.16);
+  color: #166534;
+}
+
+.statusBusy {
+  background: rgba(190, 24, 93, 0.16);
+  color: var(--wine-700);
+}
+
+.foodCardBadges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badgeWarm {
+  background: rgba(249, 115, 22, 0.16);
+  color: #9a3412;
+}
+
+.badgeGold {
+  background: rgba(245, 158, 11, 0.16);
+  color: var(--gold-700);
+}
+
+.menuActions,
+.summaryActions,
+.modalActions,
+.tagRow,
+.foodCardBadges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabScroller {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 18px;
+}
+
+.menuTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+.menuTabActive {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(190, 24, 93, 0.12));
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.08);
+}
+
+.menuTab small {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.menuGrid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.foodCard {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.foodCardHeader {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.foodCardHeader h3,
+.foodCardHeader p {
+  margin: 0;
+}
+
+.foodCardHeader p {
+  margin-top: 6px;
+  color: rgba(17, 24, 39, 0.7);
+}
+
+.reservationLayout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+}
+
+.reservationPanel,
+.summaryCard,
+.modalCard,
+.emptyState {
+  border-radius: 28px;
+}
+
+.formGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.fieldBlock {
+  display: grid;
+  gap: 8px;
+}
+
+.fieldBlock span {
+  font-weight: 600;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--gray-900);
+  font: inherit;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.selectedItemsList {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.selectedItemRow,
+.summaryTotals {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.successMessage {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  text-align: center;
+  min-height: 220px;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.36);
+}
+
+.modalCard {
+  width: min(720px, 100%);
+}
+
+.preferenceGrid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 18px 0;
+}
+
+.preferenceChip {
+  min-height: 44px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.preferenceChipActive {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(190, 24, 93, 0.12));
+  color: var(--wine-700);
+}
+
+.textButton {
+  background: transparent;
+  color: rgba(17, 24, 39, 0.66);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .reservationLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .pageShell {
+    padding: 28px 16px 64px;
+  }
+
+  .sectionHeading,
+  .menuHeader,
+  .modalHeader,
+  .foodCardHeader {
+    flex-direction: column;
+  }
+
+  .restaurantGrid,
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+}
